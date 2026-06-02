@@ -1,4 +1,6 @@
-import java.util.*;
+// https://www.codewars.com/kata/5a00e05cc374cb34d100000d
+
+// Build a function that returns an array of integers from n to 1 where n>0.
 
 public class Sequence{
     // 1st Solution
