@@ -13,16 +13,16 @@
 //
 //Examples
 //queueTime([5,3,4], 1)
-/// / should return 12
-/// / because when there is 1 till, the total time is just the sum of the times
+// should return 12
+// because when there is 1 till, the total time is just the sum of the times
 //
 //queueTime([10,2,3,3], 2)
-//// should return 10
-//// because here n=2 and the 2nd, 3rd, and 4th people in the
-//// queue finish before the 1st person has finished.
+// should return 10
+// because here n=2 and the 2nd, 3rd, and 4th people in the
+// queue finish before the 1st person has finished.
 //
 //queueTime([2,3,10], 2)
-//// should return 12
+// should return 12
 //Clarifications
 //There is only ONE queue serving many tills, and
 //The order of the queue NEVER changes, and
@@ -32,7 +32,7 @@
 //P.S. The situation in this kata can be likened to the more-computer-science-related idea of a thread pool, with relation to running multiple processes at the same time: https://en.wikipedia.org/wiki/Thread_pool
 
 public class Solution {
-  //1st Solution
+  // 1st Solution
   public static int solveSuperMarketQueue(int[] customers, int n) {
     if (n == 1) {
       int sum = 0;
@@ -58,5 +58,14 @@ public class Solution {
       }
     }
     return max;
+  }
+  // 2nd Solution
+  public static int solveSuperMarketQueue(int[] customers, int n) {
+    int[] result = new int[n];
+    for (int i = 0; i < customers.length; i++) {
+      result[0] += customers[i];
+      Arrays.sort(result);
+    }
+    return result[n - 1];
   }
 }
