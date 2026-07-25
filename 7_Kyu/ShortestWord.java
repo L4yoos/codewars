@@ -31,7 +31,7 @@ public class Kata {
         }
         return shortest;
     }
-    //3nd Solution, O(1) space complexity
+    //3rd Solution, O(1) space complexity
     public static int findShort(String s) {
         if (s == null || s.isEmpty()) {
             return 0;

@@ -15,4 +15,8 @@ public class LeapYears {
     public static boolean isLeapYear(int year) {
         return Year.isLeap(year);
     }
+    //3rd Solution
+    public static boolean isLeapYear(int year) {
+        return ((year & 3) == 0) && (year % 100 != 0 || year % 400 == 0);
+    }
 }

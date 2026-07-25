@@ -28,7 +28,7 @@ public class Vowels {
         }
         return count;
     }
-    //3nd Solution
+    //3rd Solution
     public static int getCount(String str) {
         Set<Character> vowels = new HashSet<>();
         vowels.add('a');

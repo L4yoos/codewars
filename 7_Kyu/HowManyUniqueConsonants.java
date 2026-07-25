@@ -35,7 +35,7 @@ public class Kata {
         }
         return uniqueConsonants.size();
     }
-    //3nd Interesting Solution
+    //3rd Interesting Solution
     public static int countConsonants(final String str) {
         return (int) str.toLowerCase()
                 .replaceAll("[^a-z]|(?=[aeiou]).", "")

@@ -37,7 +37,7 @@ public class Kata{
                 .toArray();
     }
 
-    //3nd Solution
+    //3rd Solution
     public static int[] capitals(String s){
         int l = 0;
         for (char c : s.toCharArray()) {
