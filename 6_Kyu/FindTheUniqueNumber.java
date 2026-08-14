@@ -15,6 +15,7 @@
 // Find The Unique
 
 public class Kata {
+    //1st Solution
     public static double findUniq(double arr[]) {
         Set<Double> seen = new HashSet<>();
         Set<Double> duplicates = new HashSet<>();
@@ -29,5 +30,13 @@ public class Kata {
             }
         }
         return 0.0;
+    }
+    //2nd Solution
+    public static double findUniq(double arr[]) {
+        double number = arr[0] == arr[1] ? arr[0] : arr[2];
+        for (double num : arr) {
+            if (num != number) return num;
+        }
+        return number;
     }
 }
