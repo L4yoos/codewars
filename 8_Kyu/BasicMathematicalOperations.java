@@ -13,6 +13,7 @@
 
 public class BasicOperations
 {
+    //1st Solution
     public static Integer basicMath(String op, int v1, int v2)
     {
         int number = 0;
@@ -23,5 +24,15 @@ public class BasicOperations
             case "/" -> number = v1 / v2;
         }
         return number;
+    }
+    //2nd Solution (01.09.2026r.)
+    public static Integer basicMath(String op, int v1, int v2) {
+        return switch (op) {
+            case "+" -> v1 + v2;
+            case "-" -> v1 - v2;
+            case "*" -> v1 * v2;
+            case "/" -> v1 / v2;
+            default -> 0;
+        };
     }
 }
