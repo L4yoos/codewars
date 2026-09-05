@@ -12,8 +12,12 @@
 //  "-7" --> -7
 
 public class StringToNumber {
-    //1st Solution
+    // 1st Solution
     public static int stringToNumber(String str) {
         return Integer.valueOf(str);
+    }
+    // 2nd Solution
+    public static int stringToNumber(String str) {
+        return Integer.parseInt(str);
     }
 }

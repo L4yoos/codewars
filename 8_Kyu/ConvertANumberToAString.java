@@ -10,7 +10,12 @@
 // -100 --> "-100"
 
 class Kata {
+    // 1st Solution
     public static String numberToString(int num) {
-        return String.valueOf(num); // Return a string of the number here!
+        return String.valueOf(num);
+    }
+    // 2nd Solution
+    public static String numberToString(int num) {
+        return Integer.toString(num);
     }
 }

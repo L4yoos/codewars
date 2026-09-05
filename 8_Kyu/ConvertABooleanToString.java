@@ -9,4 +9,12 @@ public class BooleanToString {
     public static String convert(boolean b) {
         return String.valueOf(b);
     }
+    // 2nd Solution
+    public static String convert(boolean b) {
+        return b ? "true" : "false";
+    }
+    // 3rd Solution
+    public static String convert(boolean b) {
+        return Boolean.toString(b);
+    }
 }
