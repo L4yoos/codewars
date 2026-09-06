@@ -12,7 +12,7 @@
 // The test cases contain numbers only by mistake.
 
 public class Correct {
-    //1st Solution
+    // 1st Solution
     public static String correct(String string) {
         Map<Character, Character> map = new HashMap<>();
         map.put('1', 'I');
@@ -28,9 +28,24 @@ public class Correct {
 
         return new String(chars);
     }
-
-    //2nd Solution
+    // 2nd Solution
     public static String correct(String string) {
         return string.replace("1", "I").replace("0", "O").replace("5", "S");
+    }
+    // 3rd Solution
+    public static String correct(String string) {
+        char[] chars = string.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == '1') {
+                chars[i] = 'I';
+            } else if (chars[i] == '0') {
+                chars[i] = 'O';
+            } else if (chars[i] == '5') {
+                chars[i] = 'S';
+            }
+        }
+
+        return new String(chars);
     }
 }

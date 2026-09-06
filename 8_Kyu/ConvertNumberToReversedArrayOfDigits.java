@@ -20,4 +20,25 @@ public class Kata {
         }
         return arr;
     }
+    // 2nd Solution
+    public static int[] digitize(long n) {
+        if (n == 0) return new int[]{0};
+
+        long dumpNumber = n;
+        int digits = 0;
+
+        while (dumpNumber != 0) {
+            dumpNumber /= 10;
+            digits++;
+        }
+
+        int[] array = new int[digits];
+
+        for (int i = 0; i < digits; i++) {
+            array[i] = (int) (n % 10);
+            n /= 10;
+        }
+
+        return array;
+    }
 }
