@@ -10,6 +10,7 @@
 // n = 11 should return 1011
 
 public class Kata {
+    // 1st Solution
     public static int toBinary(int n) {
         StringBuilder number = new StringBuilder();
         while (n > 0) {
@@ -17,5 +18,9 @@ public class Kata {
             n /= 2;
         }
         return Integer.parseInt(number.reverse().toString());
+    }
+    // 2nd Solution
+    public static int toBinary(int n) {
+        return Integer.parseInt(Integer.toBinaryString(n));
     }
 }
