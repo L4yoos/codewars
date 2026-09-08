@@ -5,7 +5,7 @@
 // If the sequence has fewer than n elements, return all of them.
 
 public class ZywOo {
-    //1st Solution
+    // 1st Solution
     public static int[] take(int[] arr, int n) {
         if (arr.length == 0 || n <= 0) {
             return new int[]{};
@@ -14,5 +14,16 @@ public class ZywOo {
         int limit = Math.min(arr.length, n);
 
         return Arrays.copyOfRange(arr, 0, limit);
+    }
+    // 2nd Solution
+    public static int[] take(int[] arr, int n) {
+        if (arr.length == 0 || n == 0) return new int[]{};
+        int l = arr.length > n ? n : arr.length;
+        int[] result = new int[l];
+
+        for (int i = 0; i < l; i++) {
+            result[i] = arr[i];
+        }
+        return result;
     }
 }
