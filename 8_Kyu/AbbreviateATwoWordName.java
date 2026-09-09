@@ -13,10 +13,19 @@
 public class AbbreviateTwoWords {
     // 1st Solution
     public static String abbrevName(String name) {
+        int spaceIndex = name.indexOf(' ');
+
+        char first = Character.toUpperCase(name.charAt(0));
+        char second = Character.toUpperCase(name.charAt(spaceIndex + 1));
+
+        return new String(new char[]{first, '.', second});
+    }
+    // 2nd Solution
+    public static String abbrevName(String name) {
         String[] parts = name.split(" ");
         return parts[0].substring(0, 1).toUpperCase() + "." + parts[1].substring(0, 1).toUpperCase();
     }
-    // 2nd Solution
+    // 3rd Solution
     public static String abbrevName(String name) {
         String[] parts = name.split(" ");
         return (parts[0].charAt(0) + "." + parts[1].charAt(0)).toUpperCase();
