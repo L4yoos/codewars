@@ -12,11 +12,32 @@
 // In languages with no distinct character data type, the second argument will be a string of length 1
 
 public class CodeWars {
+    // 1st Solution
     public static int strCount(String str, char letter) {
-        //write code here
+        int count = 0;
+        int length = str.length();
+        for (int i = 0; i < length; i++) {
+            if (str.charAt(i) == letter) {
+                count++;
+            }
+        }
+        return count;
+    }
+    // 2nd Solution
+    public static int strCount(String str, char letter) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == letter) {
+                count++;
+            }
+        }
+        return count;
+    }
+    // 3rd Solution
+    public static int strCount(String str, char letter) {
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if (c == letter) {
                 count++;
             }
         }

@@ -11,7 +11,21 @@
 // StringUtils.toAlternativeString("StringUtils.toAlternatingCase") == "sTRINGuTILS.TOaLTERNATINGcASE"
 
 public class StringUtils {
-    //1st Solution
+    // 1st Solution
+    public static String toAlternativeString(String string) {
+        int length = string.length();
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            char c = string.charAt(i);
+            if (Character.isUpperCase(c)) {
+                sb.append(Character.toLowerCase(c));
+            } else {
+                sb.append(Character.toUpperCase(c));
+            }
+        }
+        return sb.toString();
+    }
+    // 2nd Solution
     public static String toAlternativeString(String string) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < string.length(); i++) {
@@ -23,7 +37,7 @@ public class StringUtils {
         }
         return sb.toString();
     }
-    //2nd Solution
+    // 3rd Solution
     public static String toAlternativeString(String string) {
         char[] chars = string.toCharArray();
         for (int i = 0; i < chars.length; i++) {
