@@ -26,4 +26,14 @@ public class ZywOo {
         }
         return result;
     }
+    // 3rd Solution
+    public static int[] take(int[] arr, int n) {
+        int count = Math.min(arr.length, n);
+
+        int[] result = new int[count];
+
+        System.arraycopy(arr, 0, result, 0, count);
+
+        return result;
+    }
 }
