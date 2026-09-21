@@ -14,8 +14,7 @@ public class Kata {
 
         return switch(counter) {
             case 0 -> "Fail!";
-            case 1 -> "Publish!";
-            case 2 -> "Publish!";
+            case 1, 2 -> "Publish!";
             default -> "I smell a series!";
         };
     }
