@@ -28,6 +28,49 @@
 // A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
 
 public class TimeFormatter {
+    // 1st Solution
+    public static String formatDuration(int seconds) {
+        if (seconds == 0) return "now";
+
+        int[] units = {31536000, 86400, 3600, 60, 1};
+        String[] durations = {"year", "day", "hour", "minute", "second"};
+
+        int[] values = new int[5];
+        int count = 0;
+
+        for (int i = 0; i < units.length; i++) {
+            int value = seconds / units[i];
+            if (value > 0) {
+                values[i] = value;
+                count++;
+            }
+            seconds %= units[i];
+        }
+
+        StringBuilder sb = new StringBuilder();
+        int added = 0;
+
+        for (int i = 0; i < units.length; i++) {
+            if (values[i] > 0) {
+                if (added > 0) {
+                    if (added == count - 1) {
+                        sb.append(" and ");
+                    } else {
+                        sb.append(", ");
+                    }
+                }
+
+                sb.append(values[i]).append(" ").append(durations[i]);
+                if (values[i] > 1) {
+                    sb.append("s");
+                }
+
+                added++;
+            }
+        }
+        return sb.toString();
+    }
+    // 2nd Solution
     public static String formatDuration(int seconds) {
         List<String> parts = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
